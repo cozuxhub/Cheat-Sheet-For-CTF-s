@@ -4,6 +4,14 @@
 ```
 nmap -sV -A -p- [Target IP Address] -oN [../nmapresult.txt]
 ```
+> How many ports open?
+```
+nmap -vvv [Target IP Address]
+```
+> What vulnerabilities exist in this machine?
+```
+nmap -p- --script vuln [Target IP Address]
+```
 <br>
 <br>
 
