@@ -2,7 +2,7 @@
 > First of all, let's scan the open ports and their versions.
 
 ```
-nmap -sV -A -p- [Target IP Address] -oN [../nmapresult.txt]
+nmap -A -p- [Target IP Address] -oN [../nmapresult.txt]
 ```
 > How many ports open?
 ```
