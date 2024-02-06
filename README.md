@@ -68,7 +68,7 @@ binwalk --run-as=root [../file.jpg] -e
 > If we haven't made much progress with the brute force attack, but we have an id_rsa:
 <br>
 
-# GAINING ACCESS FOR LINUX
+# GAINING ACCESS TO LINUX WITH SSH_KEY
 > For SSH key to work:
 ```
 chmod 600 [Key]
