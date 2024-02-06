@@ -57,14 +57,18 @@ wpscan --url [Target IP Address] --passwords [../wordlist.txt] --usernames [Admi
 john [../hash.txt] --wordlist=[../wordlist.txt]
 john --format=[Format of the Hash] [../hash.txt]
 ```
-> If stegonography is revealed:
+> If something is hidden inside the image file (like steganography):
 ```
+strings [../file.png]
 stegcracker [../file.jpg] [../wordlist.txt]
+steghide extract -sf [../file.jpg]
+binwalk [../file.jpg]
+binwalk --run-as=root [../file.jpg] -e
 ```
 > If we haven't made much progress with the brute force attack, but we have an id_rsa:
 <br>
 
-# GAINING ACCESS
+# GAINING ACCESS FOR LINUX
 > For SSH key to work:
 ```
 chmod 600 [Key]
