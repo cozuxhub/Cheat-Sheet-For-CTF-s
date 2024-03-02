@@ -25,6 +25,7 @@ dirb http://[Target IP Address]
 
 ```
 gobuster dir -u http://[Target IP Address] -w [../dirbuster/wordlist.txt]
+gobuster dir -u http://[Target IP Address] -w [../dirbuster/wordlist.txt] -x [.extension]
 nikto -h [Target IP Address]
 ```
 > After the scans are completed, the web server (if any) is visited and all information is collected:
