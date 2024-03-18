@@ -1,3 +1,5 @@
+> I have listed the codes that run on the Linux terminal that you see, after the training I received and the practices I did, in order to get the most efficient results.
+> 
 # SCANNING
 > First of all, let's scan the open ports and their versions.
 
