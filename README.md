@@ -21,7 +21,7 @@ nmap -p- --script vuln [Target IP Address]
 > First, let's find the folders on the server.
 
 ```
-dirb http://[Target IP Address]
+dirb http://[Target IP Address]/ -w
 ```
 > Or let's try alternative scanning methods.
 
@@ -62,9 +62,10 @@ john --format=[Format of the Hash] [../hash.txt]
 ```
 > If something is hidden inside the image file (like steganography):
 ```
+exiftool [../file.png]
 strings [../file.png]
-stegcracker [../file.jpg] [../wordlist.txt]
 steghide extract -sf [../file.jpg]
+stegcracker [../file.jpg] [../wordlist.txt]
 binwalk [../file.jpg]
 binwalk --run-as=root [../file.jpg] -e
 ```
