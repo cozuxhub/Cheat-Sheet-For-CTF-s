@@ -57,8 +57,15 @@ wpscan --url [Target IP Address] --passwords [../wordlist.txt] --usernames [Admi
 ```
 > If we see something encrypted:
 ```
-john [../hash.txt] --wordlist=[../wordlist.txt]
-john --format=[Format of the Hash] [../hash.txt]
+john [../hash] --wordlist=[../wordlist.txt]
+john --format=[Format of the Hash] [../hash]
+```
+> If we see .pgp or .asc files:
+```
+/usr/sbin/gpg2john [../file.asc] > [../hash]
+john [../hash] [../wordlist.txt]
+gpg --import [../file.asc]
+gpg --decrypt [../file.pgp]
 ```
 > If something is hidden inside the image file (like steganography):
 ```
