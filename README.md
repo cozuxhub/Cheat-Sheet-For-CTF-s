@@ -75,6 +75,7 @@ steghide extract -sf [../file.jpg]
 stegcracker [../file.jpg] [../wordlist.txt]
 binwalk [../file.jpg]
 binwalk --run-as=root [../file.jpg] -e
+foremost -i [../file] -o [../output_directory]
 ```
 > If we haven't made much progress with the brute force attack, but we have an id_rsa:
 <br>
